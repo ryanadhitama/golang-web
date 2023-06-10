@@ -9,8 +9,10 @@ import (
 )
 
 func QueryHandler(writer http.ResponseWriter, request *http.Request) {
-	name := request.URL.Query().Get("name")
-	fmt.Fprintf(writer, "Hello %s", name)
+	// name := request.URL.Query().Get("name")
+	query := request.URL.Query()
+	name := query["name"]
+	fmt.Fprintf(writer, "Hello %s", name[0])
 }
 
 func TestHttpQuery(t *testing.T) {
