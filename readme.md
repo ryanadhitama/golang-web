@@ -5,3 +5,4 @@
 - [x] ServeMux
 - [x] Request
 - [x] Test HTTP
+- [x] HTTP Query
