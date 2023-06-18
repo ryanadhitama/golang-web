@@ -7,3 +7,4 @@
 - [x] Test HTTP
 - [x] HTTP Query
 - [x] HTTP Header
+- [x] Cookie
