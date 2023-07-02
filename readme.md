@@ -9,3 +9,4 @@
 - [x] HTTP Header
 - [x] Form Post
 - [x] Cookie
+- [x] File server
