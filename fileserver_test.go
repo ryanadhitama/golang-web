@@ -4,6 +4,7 @@ import (
 	"testing"
 	"net/http"
 	"embed"
+	"io/fs"
 )
 
 func TestFileServer(t *testing.T) {
@@ -28,7 +29,8 @@ func TestFileServer(t *testing.T) {
 var resources embed.FS
 
 func TestFileServerEmbed(t *testing.T) {
-	fileServer := http.FileServer(http.FS(resources))
+	dir, _ := fs.Sub(resources, "resources")
+	fileServer := http.FileServer(http.FS(dir))
 
 	mux := http.NewServeMux()
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
